@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: simple-frame
+  datasource:
+    url: jdbc:mysql://localhost:3306/simple_frame?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: he123456
+  rabbitmq:
+    host: 192.168.78.130
+    username: simple-frame
+    password: 123456
+    virtual-host: /simple-frame
+  data:
+    redis:
+      host: 192.168.78.130
+      port: 6379
+      password: he123456
+
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+    version: v4.0
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: org.example.simpleframe.Controller
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
